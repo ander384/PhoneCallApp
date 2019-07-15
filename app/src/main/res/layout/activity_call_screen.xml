@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CallScreenActivity"
+    android:background="@color/callScreenBackground">
+
+
+    <ImageView
+        android:id="@+id/iv_profile_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/ic_portrait_white_24dp"/>
+
+    <TextView
+        android:id="@+id/tv_dialed_contact"
+        android:layout_below="@id/iv_profile_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:textColor="@color/callScreenTextColor"
+        tools:text="Ludovico Manin"/>
+
+    <TextView
+        android:id="@+id/tv_dialing"
+        android:textColor="@color/callScreenTextColor"
+        android:layout_below="@id/tv_dialed_contact"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Dialing"/>
+
+    <SeekBar
+        android:visibility="invisible"
+        android:id="@+id/audio_sb"
+        android:layout_below="@id/tv_dialing"
+        android:progressTint="@color/callScreenTextColor"
+        android:thumbTint="@color/callScreenTextColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/ll_button_bar"
+        android:layout_above="@id/btn__end_call"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/btn_pause"
+            android:src="@drawable/ic_pause_white_24dp"
+            android:onClick="onPauseButtonClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/option_btn_shape"
+            android:layout_margin="10dp"/>
+        <ImageButton
+            android:id="@+id/btn_play"
+            android:src="@drawable/ic_play_arrow_white_24dp"
+            android:onClick="onPlayButtonClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/option_btn_shape"
+            android:layout_margin="10dp"/>
+        <ImageButton
+            android:id="@+id/btn_repeat"
+            android:src="@drawable/ic_replay_white_24dp"
+            android:onClick="onRepeatButtonClick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/option_btn_shape"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+    <ImageButton
+        android:onClick="onEndCall"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="22dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/btn__end_call"
+        android:src="@drawable/ic_call_end_white_24dp"
+        android:background="@drawable/end_call_btn_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/end_call_button" />
+
+</RelativeLayout>
